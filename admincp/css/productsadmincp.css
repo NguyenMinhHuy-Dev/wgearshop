@@ -1,0 +1,219 @@
+/* PRODUCTS FILTER */
+.container__wrapper-page-header {
+    text-align: left;
+    display: block;
+}
+
+.container__wrapper-sort-filter-price {
+    margin: 20px 0;
+    padding: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container__wrapper-sort-filter-price span {
+    font-size: 18px;
+}
+
+.container__wrapper-sort,
+.container__wrapper-filter {
+    width: 300px;
+}
+
+.container__wrapper-selection {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container__wrapper-selection select {
+    display: none;
+}
+
+.select-selected { 
+    width: 70%;
+    border-radius: 10px;  
+    margin-left: 5px;
+    background-color: rgb(239, 239, 239);
+}
+
+.select-selected:hover {
+    background-color: var(--button);
+}
+
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 22px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #000 transparent transparent transparent;
+}
+
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent #000 transparent;
+    top: 15px;
+}
+
+.select-items div,
+.select-selected {
+    padding: 15px 16px;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    user-select: none;
+}
+
+.select-items {
+    margin: 5px 0;
+    border-radius: 10px;
+    width: 70%;
+    position: absolute;
+    background-color: rgb(239, 239, 239);
+    top: 100%;
+    right: 0;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+    background-color: var(--button);
+}
+ 
+.container__wrapper-products-list.page {
+    height: auto;
+}
+
+.container__wrapper-products-list.page .container__wrapper-product {
+    opacity: 1;
+}
+
+.container__page-numbers {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+    transform: translateY(-50px);
+}
+
+.page-numbers {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.page-numbers .icon {
+    cursor: pointer;
+    padding: 0 10px;
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.page-numbers .icon:hover {
+    color: var(--button);
+}
+
+.page-numbers ul {
+    display: flex;
+}
+
+.page-numbers ul li {
+    margin: 0 15px;
+    padding: 0 10px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.page-numbers ul li i {
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.5);
+    cursor: default;
+}
+
+.page-numbers ul li.active {
+    color: var(--button);
+}
+
+.page-numbers ul li:hover {
+    color: var(--button);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1300px) {
+    .container__wrapper-filter-prices .input {
+        width: 200px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container__wrapper-page-header h4 {
+        font-size: 35px;
+    }
+
+    .container__wrapper-sort,
+    .container__wrapper-filter {
+        width: 250px;
+    }
+
+    .select-selected {
+        width: 65%;
+    }
+
+    .container__wrapper-filter-prices .input {
+        width: 180px;
+    }
+}
+
+@media (max-width: 1050px) {  
+    .container__wrapper-sort-filter-price {
+        display: block;
+        text-align: center;
+    }
+    
+    .container__wrapper-sort,
+    .container__wrapper-filter {
+        width: 310px;
+        text-align: left;
+        display: inline-block;
+    }
+
+    .container__wrapper-sort {
+        margin-right: 10px;
+    }
+
+    .select-selected {
+        width: 70%; 
+    }
+
+    .container__wrapper-filter-prices .input {
+        width: 250px;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 660px) {
+    .container__wrapper-sort {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 550px) {
+    .container__wrapper-filter-prices .input,
+    .container__wrapper-filter-prices .btn {
+        width: 310px;
+        margin: 10px auto;
+        display: block;
+    }
+}
