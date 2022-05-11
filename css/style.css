@@ -370,7 +370,7 @@ header {
 }
 
 .header__cart-list-item-name { 
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 700;
     line-height: 20px;
 }
@@ -1299,9 +1299,9 @@ header {
     vertical-align: middle;
     text-overflow: ellipsis;
     display: -webkit-box;
-    height: 40px;
-    margin-bottom: 35px;
-    -webkit-line-clamp: 2;
+    height: 60px;
+    margin-bottom: 15px;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }
 

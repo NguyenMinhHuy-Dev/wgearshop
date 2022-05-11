@@ -69,11 +69,3 @@ function toggleHeader() {
 }
 toggleHeader();
 
-// CHAT BOX
-function chatBox() {
-    document.getElementById('chat-box-btn').addEventListener('click', function() {
-        this.classList.toggle('active');
-        document.getElementById('chat-box').classList.toggle('active');
-    });
-}
-chatBox();

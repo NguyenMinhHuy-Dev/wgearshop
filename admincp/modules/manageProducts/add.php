@@ -20,8 +20,8 @@
                 <table width="100%">
                     <tr align="center">
                         <th colspan="2">
-                            <div class="detail-form__product-configuration-heading">
-                                <h4>THÊM SẢN PHẨM</h4>
+                            <div class="detail-form__product-configuration-heading" style="margin-top:0">
+                                <h4 style="color:#d277f7">THÊM SẢN PHẨM</h4>
                             </div>
                         </th>
                     </tr>
@@ -54,12 +54,12 @@
 
                     <tr align="center">
                         <td>Giá</td>
-                        <td><input type="text" name="giaban" id="giaban" class="input"></td>
+                        <td><input type="number" name="giaban" id="giaban" class="input"></td>
                     </tr>
                 
                     <tr align="center">
                         <td>Số lượng</td>
-                        <td><input type="text" name="soluong" id="soluong" class="input"></td>
+                        <td><input type="number" name="soluong" id="soluong" class="input"></td>
                     </tr>
 
                     <tr align="center">
@@ -73,7 +73,7 @@
                     </tr>
 
                     <tr align="center">
-                        <td colspan="2"><input type="submit" name="them" class="input btn btn--pri" value="Thêm"></td>
+                        <td colspan="2"><input type="submit" name="themsanpham" class="input btn btn--pri" value="Thêm"></td>
                     </tr>
                 </table>
             </div>

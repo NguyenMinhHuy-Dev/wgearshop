@@ -1,20 +1,19 @@
 <?php 
     include("./config/config.php");
-
-    $id = $_GET['idsanpham'];
-    $sql_sanpham = "SELECT * FROM tb_product WHERE id = ".$id;
+ 
+    $sql_sanpham = "SELECT * FROM tb_product WHERE id = ".$_GET['idsanpham'];
     $query_sanpham = mysqli_query($mysqli, $sql_sanpham);
 ?>
 
 <div class="detail-form__product-body"> 
     <div class="detail-form__product-configuration"> 
         <div class="detail-form__product-configuration-table">
-        <form enctype="multipart/form-data" method="POST" action="modules/manageProducts/handle.php" id="edit_product_form">
+        <form enctype="multipart/form-data" method="POST" action="modules/manageProducts/handle.php?idsanpham=<?php echo $_GET["idsanpham"] ?>" id="edit_product_form">
             <table width="100%">
                 <tr align="center">
                     <th colspan="2">
-                        <div class="detail-form__product-configuration-heading">
-                            <h4>SỬA SẢN PHẨM</h4>
+                        <div class="detail-form__product-configuration-heading" style="margin-top:0">
+                            <h4 style="color:#d277f7">CẬP NHẬT SẢN PHẨM</h4>
                         </div>
                     </th>
                 </tr>
@@ -56,7 +55,7 @@
                 <tr>
                     <td align="center">Hình ảnh</td>
                     <td align="center">
-                        <img src="modules/manageProducts/uploads/<?php echo $row["image"]; ?>" alt="Sản phẩm" style="display:block; width: 150px">
+                        <img src="modules/manageProducts/uploads/<?php echo $row["image"]; ?>" alt="Sản phẩm" style="display:block; width: 100px">
                         <input type="file" name="hinhanh" id="hinhanh">
                     </td>
                 </tr>
@@ -78,15 +77,15 @@
                             if ($row["status"] == 1) {
                         ?>
                         <select  name="trangthai" id="" class="input">
-                            <option value="1">Hiện</option> 
                             <option value="0">Ẩn</option>
+                            <option value="1" selected='selected'>Hiện</option> 
                         </select>  
                         <?php
                             }
                             else {
                         ?>
                         <select  name="trangthai" id="" class="input">
-                            <option value="0">Ẩn</option>
+                            <option value="0" selected='selected'>Ẩn</option>
                             <option value="1">Hiện</option> 
                         </select>  
                         <?php
@@ -96,7 +95,7 @@
                 </tr>
 
                 <tr align="center">
-                    <td colspan="2"><input type="submit" name="them" class="input btn btn--sec" value="Sửa"></td>
+                    <td colspan="2"><input type="submit" name="suasanpham" class="btn btn--sec" value="Cập nhật"></td>
                 </tr>
                 <?php
                     }

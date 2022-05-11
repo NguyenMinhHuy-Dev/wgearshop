@@ -1,5 +1,6 @@
 <!-- Slides -->
 <?php 
+    include("admincp/config/config.php");
     include("pages/slider.php");
 ?>
 
@@ -16,35 +17,68 @@
         </div> 
         
         <ul class="container__wrapper-products-list Keyboards">
-        <li class="container__wrapper-product"> 
-            <a href="detailKeyboard.html">
-                <div class="container__wrapper-product-img">
-                    <div class="container__wrapper-product-overlay"></div>
-                    <div class="container__wrapper-product-button-see">
-                        <button class="btn btn--sec container__wrapper-product-see">XEM CHI TIẾT</button>
-                    </div>
-                    <img src="./img/Produces/Keyboards/iKBC/iKBC CD108 PD.jpg" alt="Sản phẩm">
-                </div>
-            </a>
-            <div class="container__wrapper-product-info"><a href="detailKeyboard.html">
-                </a><div class="container__wrapper-product-info-layout"><a href="detailKeyboard.html">
-                    </a><div class="container__wrapper-product-name"><a href="detailKeyboard.html">
-                        <span></span></a><a href="#" class="header__cart-list-item-name">Bàn phím cơ iKBC CD108 PD Red switch</a>
-                    </div>
-                    <div class="container__wrapper-product-prices">
-                        <span class="container__wrapper-product-price-normal product-price-sale">1,750,000đ</span>
-                        <span class="container__wrapper-product-price-normal">1,980,000đ</span>
-                    </div>
-                </div>
-            </div>  
-        </li>
-        </ul>
+            <?php
+                $sql_kbs = "SELECT * FROM tb_product WHERE id_category=1 ORDER BY sold DESC LIMIT 15";
+                $query_kbs = mysqli_query($mysqli, $sql_kbs);
+                $count = 0;
 
+                while ($row = mysqli_fetch_array($query_kbs)) {
+                    $count++;
+            ?>
+            <li class="container__wrapper-product"> 
+                <a href="">
+                    <div class="container__wrapper-product-img">
+                        <div class="container__wrapper-product-overlay"></div>
+                        <div class="container__wrapper-product-button-see">
+                            <button class="btn btn--sec container__wrapper-product-see">XEM CHI TIẾT</button>
+                        </div>
+                        <img src="admincp/modules/manageProducts/uploads/<?php echo $row["image"]; ?>" alt="Sản phẩm">
+                    </div>
+                </a>
+                <div class="container__wrapper-product-info">
+                    <a href=""></a>
+                    <div class="container__wrapper-product-info-layout">
+                        <!-- <a href=""></a> -->
+                        <div class="container__wrapper-product-name">
+                            <!-- <a href="">
+                                <span></span>
+                            </a> -->
+                            <a href="" class="header__cart-list-item-name"><?php echo $row["name"]; ?></a>
+                        </div>
+                        <div class="container__wrapper-product-prices">
+                            <span class="container__wrapper-product-price-normal product-price-sale"><?php echo number_format($row['sale_price'], 0, ".", ",")."đ"; ?></span>
+                            <span class="container__wrapper-product-price-normal">
+                                <?php
+                                    if ($row["normal_price"] != 0) {
+                                        echo number_format($row['normal_price'], 0, ".", ",")."đ";;
+                                    }
+                                ?>
+                            </span>
+                        </div>
+                    </div>
+                </div>  
+            </li>
+            <?php
+                }
+            ?>
+        </ul>
+        <?php
+            if ($count > 5) {
+        ?>
         <div class="container__wrapper-product-footing">
             <button class="btn btn--pri container__wrapper-product-footing-button-see-more key">
                 XEM THÊM
             </button>
+            <script> 
+                document.querySelector('.container__wrapper-product-footing-button-see-more.key').addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    document.querySelector('.container__wrapper-products-list.Keyboards').classList.toggle('active');
+                });
+            </script>
         </div>
+        <?php
+            }
+        ?>
     </div>
 
     <!-- Chuột -->
@@ -54,14 +88,68 @@
         </div> 
 
         <ul class="container__wrapper-products-list Mouses"> 
-            
-        </ul>
+            <?php
+                $sql_mse = "SELECT * FROM tb_product WHERE id_category=2 ORDER BY sold DESC LIMIT 15";
+                $query_mse = mysqli_query($mysqli, $sql_mse);
+                $count = 0;
 
+                while ($row = mysqli_fetch_array($query_mse)) {
+                    $count++;
+            ?>
+            <li class="container__wrapper-product"> 
+                <a href="">
+                    <div class="container__wrapper-product-img">
+                        <div class="container__wrapper-product-overlay"></div>
+                        <div class="container__wrapper-product-button-see">
+                            <button class="btn btn--sec container__wrapper-product-see">XEM CHI TIẾT</button>
+                        </div>
+                        <img src="admincp/modules/manageProducts/uploads/<?php echo $row["image"]; ?>" alt="Sản phẩm">
+                    </div>
+                </a>
+                <div class="container__wrapper-product-info">
+                    <a href=""></a>
+                    <div class="container__wrapper-product-info-layout">
+                        <!-- <a href=""></a> -->
+                        <div class="container__wrapper-product-name">
+                            <!-- <a href="">
+                                <span></span>
+                            </a> -->
+                            <a href="" class="header__cart-list-item-name"><?php echo $row["name"]; ?></a>
+                        </div>
+                        <div class="container__wrapper-product-prices">
+                            <span class="container__wrapper-product-price-normal product-price-sale"><?php echo number_format($row['sale_price'], 0, ".", ",")."đ"; ?></span>
+                            <span class="container__wrapper-product-price-normal">
+                                <?php
+                                    if ($row["normal_price"] != 0) {
+                                        echo number_format($row['normal_price'], 0, ".", ",")."đ";;
+                                    }
+                                ?>
+                            </span>
+                        </div>
+                    </div>
+                </div>  
+            </li>
+            <?php
+                }
+            ?>
+        </ul>
+        <?php
+            if ($count > 5) {
+        ?>
         <div class="container__wrapper-product-footing">
             <button class="btn btn--pri container__wrapper-product-footing-button-see-more mse">
                 XEM THÊM
             </button>
-        </div>
+            <script> 
+                document.querySelector('.container__wrapper-product-footing-button-see-more.key').addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    document.querySelector('.container__wrapper-products-list.Keyboards').classList.toggle('active');
+                });
+            </script>
+        </div> 
+        <?php
+            }
+        ?>
     </div>
 
     <!-- Tai nghe -->
@@ -71,15 +159,68 @@
         </div> 
 
         <ul class="container__wrapper-products-list Headphones">  
-        
-        </ul>
+            <?php
+                $sql_hds = "SELECT * FROM tb_product WHERE id_category=3 ORDER BY sold DESC LIMIT 15";
+                $query_hds = mysqli_query($mysqli, $sql_hds);
+                $count = 0;
 
+                while ($row = mysqli_fetch_array($query_hds)) {
+                    $count++;
+            ?>
+            <li class="container__wrapper-product"> 
+                <a href="">
+                    <div class="container__wrapper-product-img">
+                        <div class="container__wrapper-product-overlay"></div>
+                        <div class="container__wrapper-product-button-see">
+                            <button class="btn btn--sec container__wrapper-product-see">XEM CHI TIẾT</button>
+                        </div>
+                        <img src="admincp/modules/manageProducts/uploads/<?php echo $row["image"]; ?>" alt="Sản phẩm">
+                    </div>
+                </a>
+                <div class="container__wrapper-product-info">
+                    <a href=""></a>
+                    <div class="container__wrapper-product-info-layout">
+                        <!-- <a href=""></a> -->
+                        <div class="container__wrapper-product-name">
+                            <!-- <a href="">
+                                <span></span>
+                            </a> -->
+                            <a href="" class="header__cart-list-item-name"><?php echo $row["name"]; ?></a>
+                        </div>
+                        <div class="container__wrapper-product-prices">
+                            <span class="container__wrapper-product-price-normal product-price-sale"><?php echo number_format($row['sale_price'], 0, ".", ",")."đ"; ?></span>
+                            <span class="container__wrapper-product-price-normal">
+                                <?php
+                                    if ($row["normal_price"] != 0) {
+                                        echo number_format($row['normal_price'], 0, ".", ",")."đ";;
+                                    }
+                                ?>
+                            </span>
+                        </div>
+                    </div>
+                </div>  
+            </li>
+            <?php
+                }
+            ?>
+        </ul>
+        <?php
+            if ($count > 5) {
+        ?>
         <div class="container__wrapper-product-footing">
             <button class="btn btn--pri container__wrapper-product-footing-button-see-more hdp">
                 XEM THÊM
             </button>
+            <script> 
+                document.querySelector('.container__wrapper-product-footing-button-see-more.key').addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    document.querySelector('.container__wrapper-products-list.Keyboards').classList.toggle('active');
+                });
+            </script>
         </div>
-
+        <?php
+            }
+        ?>
     </div> 
 </div>
 
@@ -213,4 +354,4 @@
         <input type="text" placeholder="Đăng ký Email để nhận thông báo">
         <button class="btn btn--pri email-submit">ĐĂNG KÝ</button>
     </div>
-</div>
+</div> 

@@ -29,7 +29,7 @@
             //     include("main/promotion.php");
             // }
             else {
-                include("modules/dashboard.php");
+                include("manageProducts/show.php");
             }
         ?>
     </div> 

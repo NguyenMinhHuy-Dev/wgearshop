@@ -918,6 +918,7 @@ header {
 .detail-form__product-configuration-table table {
     max-width: 90%;
     margin: 10px auto;
+    border-collapse: collapse;
 }
 
 .detail-form__product-configuration-table table tr {
@@ -926,11 +927,12 @@ header {
 }
 
 .detail-form__product-configuration-table table tr:nth-child(even) {
-    background-color: #e39dff;
+    background-color: #dda5f488;
 }
 
-.detail-form__product-configuration-table table tr td {
+.detail-form__product-configuration-table table tr:not(:last-child) td {
     width: 20%;
+    border: 1px solid rgba(0, 0, 0, 0.133);
 }
 
 .detail-form__product-configuration-table table tr td:nth-child(1) {
@@ -1694,7 +1696,51 @@ header {
 }
 
 .input_form .input {
-    display: block;
+    display: block; 
+}
+
+/* .show-table {
+    border: 1px solid;
+} */
+
+.list-product {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 10px;
+    overflow: auto; 
+}
+
+.show-table.input-form { 
+    border-collapse: collapse;
+}
+
+.show-table.input-form tr:nth-child(even) {
+    background-color: #dda5f488;
+}
+
+.show-table.input-form tr:not(:nth-child(1)) {
+    height: 90px; 
+}
+
+.show-table.input-form th {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* .show-table.input-form th, */
+.show-table.input-form td {
+    /* border: 1px solid #d277f7; */
+    padding: 5px;
+}
+
+.add-product {
+    display: flex;
+    justify-content: center;
+}
+
+.add-product .btn {
+    width: 200px;
+    padding: 10px;
 }
 
 /* ANIMATION */

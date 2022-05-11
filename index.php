@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css?v=<?php echo time(); ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">  
     <link rel="icon" href="./img/Logo/Icon.png" type="image/png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/0591fa8989.js" crossorigin="anonymous"></script>
+    
     <title>W-Gear</title>
 </head>
 <body class="sale-page" >
@@ -129,6 +132,16 @@
             </div>
         </div>
     </div>
-    <script src="./js/app.js"></script>
+
+    <script src="./js/app.js"></script> 
+
+    <script>
+        $(document).ready(function() {
+            $('#chat-box-btn').click(function() {
+                $this.classList.toggle('active');
+                document.getElementById('chat-box').classList.toggle('active');
+            })
+        });
+    </script>
 </body>
 </html>
