@@ -902,7 +902,7 @@ header {
 .detail-form__product-configuration-heading {
     display: flex;
     justify-content: center;
-    margin-top: 70px;
+    margin-top: 40px;
     margin-bottom: 30px;
     text-align: center;
     border-bottom: 1px solid var(--input);
@@ -916,13 +916,17 @@ header {
 }
 
 .detail-form__product-configuration-table table {
-    width: 80%;
+    max-width: 90%;
     margin: 10px auto;
 }
 
 .detail-form__product-configuration-table table tr {
-    height: 40px;
+    height: 60px; 
     padding: 5px;
+}
+
+.detail-form__product-configuration-table table tr:nth-child(even) {
+    background-color: #e39dff;
 }
 
 .detail-form__product-configuration-table table tr td {
@@ -931,11 +935,12 @@ header {
 
 .detail-form__product-configuration-table table tr td:nth-child(1) {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 20px; 
 }
 
 .detail-form__product-configuration-table table tr td:nth-child(2) { 
     font-size: 18px;
+    /* border-left: 2px solid; */
 }
 
 .detail-form__product-blog-body {
@@ -1684,7 +1689,13 @@ header {
     line-height: 40px;
 } */
 
+#add_product_form {
+    max-width: 90%;
+}
 
+.input_form .input {
+    display: block;
+}
 
 /* ANIMATION */
 @keyframes fadeIn {
