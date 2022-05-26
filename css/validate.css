@@ -1,0 +1,14 @@
+.validate-page {
+    /* background-image: url(../img/Background/background.jpg); 
+    background-repeat: no-repeat;
+    background-size: cover;  
+    width: 100vw; */
+    background-color: #FDA7DF;
+}
+
+
+
+.auth-form__validate {
+    display: block;
+    color: white;
+}

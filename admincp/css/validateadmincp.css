@@ -1,0 +1,99 @@
+:root {
+    --primary: #fff;
+    --text: #000;
+    --button: #d277f7;
+    --input: #dbdbdb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-size: 16px; */
+}
+
+body { 
+    width: 100vw;
+    height: 100vh; 
+    background-image: linear-gradient(to right, #FDA7DF, var(--button));
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    list-style: none; 
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-wrapper { 
+    width: 400px;
+    /* height: 500px; */
+    background-color: var(--primary);
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.login-heading {
+    display: block;
+    margin: 20px 0 50px;
+    font-size: 27px;
+}
+
+.login-username,
+.login-password {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.login-username label,
+.login-password label {
+    margin-left: 10px;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.validate-page .input {
+    outline: none;
+    width: 100%;
+    height: 45px;
+    border: 2px solid var(--input);
+    border-radius: 10px; 
+    /* line-height: 16px; */
+    font-size: 17px;
+    padding: 0 15px;
+}
+
+.validate-page .input:focus {
+    border-color: var(--button);
+}
+
+.login-submit {
+    width: 100%;
+    display: block; 
+}
+
+.login-submit .button {
+    font-weight: bold;
+    background-color: var(--text);
+    border: none;
+    margin: 20px 0;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.login-submit .button:hover {
+    background-color: var(--button);
+    color: var(--text);
+}
+
+.error-message {
+    font-size: 14px;
+    color: red;
+    margin-left: 10px;
+}

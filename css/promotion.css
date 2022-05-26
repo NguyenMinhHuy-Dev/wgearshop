@@ -1,0 +1,8 @@
+.promotion-container .container__wrapper {
+    max-width: 100%;
+    margin: 70px 0;
+}
+
+.promotion-container .container__wrapper img {
+    width: 100%;
+}

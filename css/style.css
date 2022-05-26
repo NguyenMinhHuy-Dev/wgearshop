@@ -12,8 +12,8 @@
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
     list-style: none; 
-    font-weight: 500;
-    font-size: 16px;
+    /* font-weight: 500;
+    font-size: 16px; */
     color: var(--text);
 }
 
@@ -137,7 +137,17 @@ header {
     font-size: 30px;
     color: var(--button);
     display: inline-block; 
+    animation: circle 1s linear infinite;
     /* transform: rotate(-30deg); */
+}
+
+@keyframes circle {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .header__brand span {
@@ -351,8 +361,8 @@ header {
 }
 
 .header__cart-list-item-igm {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    /* height: 100px; */
     margin-left: 10px;
 }
 
@@ -449,11 +459,7 @@ header {
     display: flex;
     justify-content: center;
     cursor: pointer; 
-}
-
-.sign-in {
-    display: none;
-}
+} 
 
 .sign-out {
     padding: 20px;
@@ -477,6 +483,7 @@ header {
 .header__user-account--link {
     display: block; 
     position: absolute;
+    width: 45px;
     z-index: 99;
 }
 
@@ -617,11 +624,11 @@ header {
     background-color: var(--button);
 }
 
-/* MODAL */
-.modal {
+/* mymodal */
+.mymodal {
     position: fixed;
     display: flex;
-    z-index: 9991;
+    z-index: 100000;
     top: 0;
     left: 0;
     bottom: 0;
@@ -630,7 +637,7 @@ header {
     display: none;
 }
 
-.modal.active {
+.mymodal.active {
     display: flex; 
 }
 
@@ -649,14 +656,31 @@ header {
     border-radius: 10px;
     margin: auto;
     z-index: 9999;
+    overflow: hidden;
     animation: growth linear 0.1s; 
 }
 
 /* AUTHEN */
-.auth-form { 
-    width: 460px;
+#regiration_form fieldset:not(:first-of-type) {
     display: none;
 }
+
+.next.disabled,
+.submit.disabled {
+    pointer-events: none;
+    background-color: rgb(122, 122, 122);
+}
+
+.input.disabled {
+    pointer-events: none;
+    border: 2px solid rgba(224, 224, 224, 0.69);;
+}
+
+.auth-form { 
+    width: 500px;
+    height: 600px;
+    display: none;
+} 
 
 .auth-form__signup.active,
 .auth-form__signin.active,
@@ -666,6 +690,8 @@ header {
 
 .auth-form__container {
     padding: 0 30px;
+    position: relative;
+    height: 600px;
 }
 
 .auth-form__header {
@@ -688,12 +714,62 @@ header {
 }
 
 .auth-form__group {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .auth-form__input {
-    width: 400px;
+    width: 100%;
+    padding-right: 43px;
     display: flex; 
+}
+
+.auth-form__group i {
+    font-size: 25px;
+    position: absolute;
+    top: 25%;
+    right: 10px;
+    cursor: default;
+    visibility: hidden;
+}
+
+.auth-form__group .error-message {
+    position: absolute;
+    font-size: 15px;
+    top: 50px;
+    left: 17px;
+    color: #e74c3c; 
+    /* visibility: hidden; */
+}
+
+.auth-form__group .success-message {
+    position: absolute;
+    font-size: 15px;
+    top: 50px;
+    left: 17px;
+    color: #2ecc71; 
+    /* visibility: hidden; */
+}
+
+.auth-form__group.success .auth-form__input{
+    border: 2px solid #2ecc71;
+}
+.auth-form__group.success i.fa-circle-check {
+    color: #2ecc71;
+    visibility: visible;
+}
+
+.auth-form__group.error .auth-form__input{
+    border: 2px solid #e74c3c;
+}
+
+.auth-form__group.error i.fa-circle-exclamation {
+    color: #e74c3c; 
+    visibility: visible;
+}
+
+.auth-form__group.error .error-message {
+    color: #e74c3c; 
+    visibility: visible;
 }
 
 .auth-form__links {
@@ -712,12 +788,28 @@ header {
     text-align: center;
 }
 
+.auth-form__send-code {
+    width: 100%; 
+    padding: 10px;
+    text-align: left;
+}
+
 .auth-form__other {
     margin-top: 10px;
     width: 100%;
     display: grid;
     font-size: 65%;
     grid-template-columns: calc(99%/3) calc(99%/3) calc(99%/3);
+}
+
+.auth-form__send { 
+    display: inline-block; 
+}
+
+.auth-form__send a {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--button);
 }
 
 .auth-form__other a i {
@@ -731,10 +823,36 @@ header {
 }
 
 .auth-form__controls {
-    margin-top: 80px;
-    margin-bottom: 30px;
+    position: absolute;
+    /* margin-top: 80px; */
+    /* margin-bottom: 30px; */
+    left: 30px;
+    right: 30px;
+    top: 85%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+}
+
+.msg-sent {
+    width: 100%;
+    height: 50px; 
+    border-radius: 10px;
+    padding: 5px 10px;
+    align-items: center;
+}
+
+.msg-sent.success {
+    background-color: #2ecc71;
+}
+
+.msg-sent.error {
+    background-color: #e74c3c;
+}
+
+.msg-sent span {
+    color: var(--primary);
+    /* font-size: 20px; */
+    line-height: 40px;
 }
 
 /* DETAIL PRODUCT */
@@ -1183,8 +1301,8 @@ header {
 .container__wrapper-products-list {
     display: grid;
     grid-template-columns: calc(100%/5) calc(100%/5) calc(100%/5) calc(100%/5) calc(100%/5);
-    height: 450px;
-    overflow: hidden;
+    /* height: 450px;
+    overflow: hidden; */
 }
 
 .container__wrapper-products-list.active {
@@ -1198,22 +1316,22 @@ header {
     overflow: hidden;
 }
 
-.container__wrapper-product {
+/* .container__wrapper-product {
     opacity: 0.5;
-}
+} */
 
 .container__wrapper-products-list.active .container__wrapper-product {
     opacity: 1;
     transition: 0.7s;
 }
 
-.container__wrapper-product:nth-child(1),
+/* .container__wrapper-product:nth-child(1),
 .container__wrapper-product:nth-child(2),
 .container__wrapper-product:nth-child(3),
 .container__wrapper-product:nth-child(4),
 .container__wrapper-product:nth-child(5) {
     opacity: 1;
-}
+} */
 
 .container__wrapper-product:hover {
     border-color: var(--button);
@@ -1655,6 +1773,104 @@ footer {
     line-height: 40px;
 }
 
+.show-table.input-form th {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.col-name {
+    width: 500px;
+}
+
+.show-table.input-form { 
+    border-collapse: collapse;
+    border-radius: 10px;
+}
+
+.show-table.input-form tr {
+    border-radius: 10px;
+}
+
+.show-table.input-form tr:nth-child(even) {
+    background-image: linear-gradient(to right, #FDA7DF, var(--button));
+}
+
+.show-table.input-form tr:not(:nth-child(1)) {
+    height: 90px; 
+}
+
+.show-table.input-form th {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+/* .show-table.input-form th, */
+.show-table.input-form td {
+    /* border: 1px solid #d277f7; */
+    padding: 5px;
+}
+
+.list-product {
+    /* width: 100%;
+    height: 500px; */
+    margin-bottom: 20px; 
+}
+
+.total-money {
+    height: 50px;
+    align-items: center;
+    display: flex;
+}
+
+.total-money .line {
+    width: 55%;
+    height: 5px;
+    background-color: var(--input);
+}
+
+.total-money span {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.total-money span:first-child {
+    font-weight: 500;
+}
+
+.add-product {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#button-buy {
+    width: 200px;
+    border: 1px solid var(--input);
+    height: 100px;
+}
+
+.amount-edit input[type="button"].plus {
+    width: 40px;
+    line-height: 41px;
+    top: 0px;
+    right: 25px;
+    border: 2px solid var(--input);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    position: absolute; 
+}
+
+.amount-edit input[type="button"].minus {
+    width: 40px;
+    line-height: 41px;
+    top: 0px;
+    right: 116px;
+    border: 2px solid var(--input);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    position: absolute;
+}
+
 /* ANIMATION */
 @keyframes fadeIn {
     from {
@@ -1720,14 +1936,14 @@ footer {
 
     .container__wrapper-products-list { 
         grid-template-columns: calc(100%/4) calc(100%/4) calc(100%/4) calc(100%/4);
-        height: 450px; 
+        /* height: 450px;  */
     } 
 }
 
 @media(max-width: 800px) {    
     .container__wrapper-products-list { 
         grid-template-columns: calc(100%/3) calc(100%/3) calc(100%/3);
-        height: 450px; 
+        /* height: 450px;  */
     } 
 }
 
@@ -1771,6 +1987,7 @@ footer {
         width: 95%;
     }
 
+    
     .auth-form {
         width: 100%;
     }
@@ -1934,7 +2151,7 @@ footer {
 
     .container__wrapper-products-list { 
         grid-template-columns: calc(100%/2) calc(100%/2);
-        height: 450px; 
+        /* height: 450px;  */
     }    
 }
 

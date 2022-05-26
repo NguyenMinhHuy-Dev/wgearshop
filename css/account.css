@@ -1,0 +1,276 @@
+.sale-page {
+    /* width: 100vw;
+    height: 100vh; */
+    background-color: #FDA7DF; 
+}
+.user-info-form {
+    padding: 20px;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.user-info-form .sign-in {
+    width: 100%;
+    /* height: 700px; */
+    text-align: center; 
+    position: relative;
+}
+
+.button-order {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+}
+
+.order-button {
+    width: 100px;
+}
+
+.order-button .icon:hover {
+    color: var(--text);
+}
+
+.user-account-avatar { 
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #FDA7DF, var(--button));
+    /* height: 200px; */
+}
+
+.user-account-avatar .avatar {
+    width: 20%;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 3px solid var(--input);
+    overflow: hidden;
+    transition: 0.2s linear;
+    cursor: pointer;
+}
+
+.user-account-avatar .avatar:hover {
+    border-width: 7px;
+    border-color: var(--button);
+    transition: 0.2s linear;
+}
+ 
+
+.user-account-avatar img { 
+    /* margin: 0 auto; */
+    /* top: 150px;
+    right: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    /* position: absolute;  */
+    /* z-index: 1; */
+    width: 100%;
+}
+
+.user-account-avatar input {
+    opacity: 0; 
+    visibility: hidden; 
+    top: 150px;
+    right: 50%;
+    left: 50%;
+    left: 50%;
+    position: absolute;
+    z-index: 0;
+}
+
+.user-info-form .sign-in .header__user-account-name {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 27px;
+    color: var(--primary);
+}
+
+.user-table {
+    width: 100%;
+    overflow-x: auto;
+    padding: 20px;
+}
+
+#user-info-table {
+    width: 100%;
+    margin: 20px auto;
+} 
+
+#user-info-table tr {
+    /* width: 50%; */
+    height: 70px;
+}
+
+#user-info-table td {
+    width: 50%;
+}
+
+#user-info-table td input {
+    width: 80%;
+}
+
+#user-info-table td .btn {
+    margin-top: 20px;
+}
+
+.star { 
+    /* align-items: center;
+    width: 51px;
+    height: 50px; */
+    font-size: 30px;
+    /* border-radius: 50%; */ 
+    cursor: pointer;
+}
+
+.star:hover { 
+    color: #f1c40f;
+}
+
+/* .order:nth-child(1) {
+    margin-top: 20px;
+}
+
+.order {
+    width: 100%;
+    height: 70px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 2px solid var(--text);
+    display: flex;
+    justify-content: space-between; 
+    overflow: hidden;  
+}
+
+.order-number {
+    width: 50px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.order-number span {
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.order-code { 
+    height: 100%;
+    white-space: nowrap; 
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.order-code span:first-child,
+.order-status span:first-child {
+    font-weight: 600;
+    margin-right: 10px; 
+    color: var(--text);
+}
+
+.order-code span:last-child {
+    font-size: 18px;
+    display: block;
+}
+
+.order-status {
+    min-width: 10%;
+    height: 100%;
+    white-space: nowrap; 
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 10px; 
+}
+
+.order-detail-button {
+    width: 70px; 
+    height: 100%;   
+}
+
+.order-detail-button .btn {
+    width: 101%;
+    height: 100%; 
+}
+
+.order-detail-button .btn .icon {
+    color: var(--primary);
+} */
+
+.order {
+    width: 100%;
+    height: 500px;
+    background-color: #FDA7DF;
+    border-radius: 10px;
+}
+
+.order-info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.order-info-table thead th {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.order-info-table tr {
+    height: 55px;
+    border-bottom: 1px solid rgb(241, 241, 241);
+}
+
+.status-span {
+    border-radius: 5px;
+    padding: 3px;
+    display: inline-block;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.success {
+    background-color: #27ae60;
+}
+
+.progress {
+    background-color: #f1c40f;
+}
+
+.return {
+    background-color: #e74c3c;
+}
+
+.button {
+    border: none;
+    width: 120px;
+    display: inline-block;
+    background-color: #EFEFEF;
+    line-height: 37px;
+    margin: 5px 5px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.button.success-btn:hover {
+    background-color: #27ae60;
+    color: var(--primary);
+}
+
+.button.return-btn:hover {
+    background-color: #e74c3c;
+    color: var(--primary);
+}
+
+@media (max-width: 1000px) {
+    .order-code {
+        display: block;
+        text-align: left;
+        padding: 10px
+    }
+}

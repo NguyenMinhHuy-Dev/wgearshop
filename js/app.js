@@ -10,12 +10,6 @@ function isUserValid(un, pw) {
     return false;
 }
 
-// ĐĂNG NHẬP
-function signIn1() {
-    document.getElementsByClassName('modal')[0].classList.add('active');
-    document.getElementById('sign-in').classList.add('active');
-}
-
 function signIn2() {
     if (isUserValid('','')) {
         quitModal();
@@ -68,4 +62,3 @@ function toggleHeader() {
     })
 }
 toggleHeader();
-

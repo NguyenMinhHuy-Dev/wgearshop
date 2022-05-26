@@ -8,6 +8,7 @@ function customSelect() {
 
         a = document.createElement("DIV");
         a.setAttribute("class", "select-selected");
+        a.setAttribute("id", "select-selected");
         a.innerHTML = selElmt.options[selElmt.selectedIndex].innerHTML;
         x[i].appendChild(a);
 
@@ -35,26 +36,7 @@ function customSelect() {
                         break;
                     }
                 }
-                h.click();
-                if (this.textContent == "Mới nhất" || this.textContent == "Bán chạy" || this.textContent == "Giá giảm dần" || this.textContent == "Giá tăng dần") {
-                    if (document.getElementsByClassName('container__wrapper-selection keyboard').length != 0) {
-                        sortKeyboards(this.textContent);
-                    }
-                    if (document.getElementsByClassName('container__wrapper-selection mouse').length != 0) {
-                        sortMouses(this.textContent);
-                    }
-                    if (document.getElementsByClassName('container__wrapper-selection headphone').length != 0) {
-                        sortHeadphones(this.textContent);
-                    }
-                }
-                else {
-                    if (document.getElementsByClassName('container__wrapper-selection keyboard').length != 0)
-                        filterKeyboards(this.textContent);
-                    if (document.getElementsByClassName('container__wrapper-selection mouse').length != 0) 
-                        filterMouses(this.textContent);
-                    if (document.getElementsByClassName('container__wrapper-selection headphone').length != 0) 
-                        filterHeadphones(this.textContent);
-                }
+                h.click(); 
             }); 
             b.appendChild(c);
         }

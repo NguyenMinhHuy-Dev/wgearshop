@@ -31,11 +31,23 @@
             <li>
                 <h3>Mạng xã hội</h3>
                 <ul>
-                    <li><i class="fa-brands fa-facebook-square"></i></li>
-                    <li><i class="fa-brands fa-instagram-square"></i></li>
-                    <li><i class="fa-brands fa-youtube-square"></i></li>
+                    <li><i id="fb-link" class="fa-brands fa-facebook-square"></i></li>
+                    <li><i id="ig-link" class="fa-brands fa-instagram-square"></i></li>
+                    <li><i id="yt-link" class="fa-brands fa-youtube-square"></i></li>
                 </ul>
             </li>
         </ul>
     </div>
 </footer>
+
+<script> 
+    document.getElementById('fb-link').addEventListener('click', function() {
+        window.open("https://www.facebook.com/profile.php?id=100015232036699", '_blank').focus();
+    });
+    document.getElementById('ig-link').addEventListener('click', function() {
+        window.open("https://www.instagram.com/02.minhuy/", '_blank').focus();
+    });
+    document.getElementById('yt-link').addEventListener('click', function() {
+        window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", '_blank').focus(); 
+    });
+</script>
